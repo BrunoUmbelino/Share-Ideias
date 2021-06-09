@@ -1,10 +1,14 @@
 import React from "react";
-import Main from "./Pages/Main";
+import { Router } from "react-router-dom";
+import Routes from "./Routes";
+import history from "./Routes/history";
 
 function App() {
   return (
     <>
-      <Main />
+      <Router history={history}>
+        <Routes />
+      </Router>
     </>
   );
 }

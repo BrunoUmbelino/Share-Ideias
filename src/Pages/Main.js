@@ -8,7 +8,7 @@ function Main() {
   return (
     <>
       <Container>
-        <Title message="Texts of day" />
+        <Title message="What's on your mind?" />
         <NewPost />
         <Posts />
       </Container>
