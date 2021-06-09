@@ -16,7 +16,7 @@ import {
 
 function TextItem({ post }) {
   return (
-    <ListItem key={post.id}>
+    <ListItem>
       <UserPhoto>
         <IoPersonCircleOutline />
       </UserPhoto>

@@ -8,7 +8,7 @@ function index() {
     <PostsWrap>
       <ul>
         {posts.map((post) => (
-          <TextItem post={post} />
+          <TextItem key={post.id} post={post} />
         ))}
       </ul>
     </PostsWrap>
