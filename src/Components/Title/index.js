@@ -1,19 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const styledTitle = styled.div`
+const StyledTitle = styled.div`
   h1 {
-    font-size: 2rem;
-    color: aqua;
+    color: red;
   }
 `;
 
 function Title({ message }) {
   return (
     <>
-      <styledTitle data-testid="title">
-        <h1>{message}</h1>
-      </styledTitle>
+      <StyledTitle>
+        <h1 data-testid="title">{message}</h1>
+      </StyledTitle>
     </>
   );
 }

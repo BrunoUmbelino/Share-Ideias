@@ -1,5 +1,13 @@
 import React from "react";
-import { ListItem } from "./PostItem";
+import {
+  Content,
+  Reactions,
+  UserName,
+  UserPhoto,
+  LikeWrap,
+  ListItem,
+  LoveWrap,
+} from "./style";
 import {
   IoPersonCircleOutline,
   IoThumbsUpSharp,
@@ -9,15 +17,19 @@ import {
 function TextItem({ post }) {
   return (
     <ListItem key={post.id}>
-      <div>
+      <UserPhoto>
         <IoPersonCircleOutline />
-        {post.id}
-      </div>
-      <div>{post.content}</div>
-      <div>
-        <IoThumbsUpSharp />
-        <IoHeartSharp />
-      </div>
+      </UserPhoto>
+      <UserName>{post.id}</UserName>
+      <Content>{post.content}</Content>
+      <Reactions>
+        <LikeWrap>
+          <IoThumbsUpSharp />
+        </LikeWrap>
+        <LoveWrap>
+          <IoHeartSharp />
+        </LoveWrap>
+      </Reactions>
     </ListItem>
   );
 }
