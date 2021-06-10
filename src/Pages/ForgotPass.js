@@ -10,6 +10,7 @@ import {
   FormButton,
 } from "../Components/Form/FormElements";
 import Title from "../Components/Title";
+import { ForgotPasswordAPI } from "../Services/api";
 
 function ForgotPass() {
   return (
@@ -17,9 +18,19 @@ function ForgotPass() {
       <Container>
         <FormWrap>
           <FormikWrap
-            initialValues={{ username: "", password: "" }}
+            initialValues={{ username: "" }}
             onSubmit={async (values) => {
-              await console.log(values);
+              try {
+                const response = await ForgotPasswordAPI(values);
+                if (response.data) {
+                  alert(JSON.stringify(response.data, 0, null));
+                } else {
+                  throw new Error("User not found");
+                }
+              } catch (error) {
+                console.log(error);
+                alert(JSON.stringify(error.message, 1, null));
+              }
             }}
           >
             <FormikForm>

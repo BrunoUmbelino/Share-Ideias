@@ -20,13 +20,9 @@ export const RegisterAPI = async ({ username, password }) => {
   return response;
 };
 
-export const ForgotPasswordAPI = async (username) => {
-  try {
-    const response = await api.get("/forgot-password/" + username);
-    console.log(response);
-  } catch (error) {
-    console.log(error);
-  }
+export const ForgotPasswordAPI = async ({ username }) => {
+  const response = await api.get("/forgot-password/" + username);
+  return response;
 };
 
 export const FeedsAPI = async () => {
