@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NewPostBlock, Input, SubmitBtn, UserPhoto } from "./NewPostElements";
 import { IoPersonCircleOutline } from "react-icons/io5";
-import { Feed } from "../../Services/api";
+import { FeedsAPI } from "../../Services/api";
 
 function Form({ handlePosts }) {
   const [newPost, setNewPost] = useState("");
@@ -9,7 +9,7 @@ function Form({ handlePosts }) {
 
   async function handleSubmit() {
     try {
-      const response = await Feed(newPost);
+      const response = await FeedsAPI(newPost);
       if (response) handlePosts();
     } catch (error) {
       console.log(error);

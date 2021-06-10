@@ -29,19 +29,19 @@ export const ForgotPasswordAPI = async (username) => {
   }
 };
 
-export const Feeds = async () => {
+export const FeedsAPI = async () => {
   const response = await api.get("/feeds");
   return response;
 };
 
-export const Feed = async (newPost) => {
+export const FeedAPI = async (newPost) => {
   const response = await api.post("/feed", {
     content: newPost,
   });
   return response;
 };
 
-export const Reaction = async ({ feedId, like, love }) => {
+export const ReactionAPI = async ({ feedId, like, love }) => {
   const response = await api.post("/reaction", {
     feedId,
     like,

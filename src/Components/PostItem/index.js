@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Content,
   Reactions,
@@ -12,7 +12,7 @@ import {
   IoThumbsUpSharp,
   IoHeartSharp,
 } from "react-icons/io5";
-import { Reaction } from "../../Services/api";
+import { ReactionAPI } from "../../Services/api";
 
 function PostItem({ post, handlePosts }) {
   async function handleReaction(reaction) {
@@ -26,7 +26,7 @@ function PostItem({ post, handlePosts }) {
     if (reaction === "love") reactionData.love = true;
 
     try {
-      const response = await Reaction(reactionData);
+      const response = await ReactionAPI(reactionData);
       console.log(response);
       if (response) handlePosts();
     } catch (error) {
