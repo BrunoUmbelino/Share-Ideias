@@ -13,7 +13,10 @@ export default function useAuth() {
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       setAuthenticated(true);
     }
-    setLoading(false);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, []);
 
   async function handleLogin({ username, password }) {
