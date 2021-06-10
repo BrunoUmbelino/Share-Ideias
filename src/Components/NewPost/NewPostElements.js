@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FormWrap = styled.div`
+export const NewPostWrap = styled.div`
   display: grid;
   grid-template-areas:
     "user input"

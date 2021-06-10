@@ -1,11 +1,11 @@
 import React from "react";
-import { FormWrap, Input, SubmitBtn, UserPhoto } from "./NewPostElements";
+import { Input, NewPostWrap, SubmitBtn, UserPhoto } from "./NewPostElements";
 import { IoPersonCircleOutline } from "react-icons/io5";
 
 function Form() {
   return (
     <>
-      <FormWrap>
+      <NewPostWrap>
         <UserPhoto>
           <IoPersonCircleOutline />
         </UserPhoto>
@@ -15,7 +15,7 @@ function Form() {
           placeholder="What are you thinking about today? "
         />
         <SubmitBtn>Submit you text</SubmitBtn>
-      </FormWrap>
+      </NewPostWrap>
     </>
   );
 }

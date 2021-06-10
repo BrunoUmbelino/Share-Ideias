@@ -5,7 +5,7 @@ const api = axios.create({
 });
 
 api.defaults.headers.common["Authorization"] =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODQsInVzZXJuYW1lIjoiYnJ1bm8tdW1iZWxpbm8iLCJpYXQiOjE2MjMyNjcxODcsImV4cCI6MTYyMzI3MDc4N30.-avpEyXPnLH8aen3T-tX7zXDb3hocQezY9SGxiGAYaM";
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODQsInVzZXJuYW1lIjoiYnJ1bm8tdW1iZWxpbm8iLCJpYXQiOjE2MjMyNzEzNDcsImV4cCI6MTYyMzI3NDk0N30.9f7UKcc-EEO6HO1szjosHuH3guC8vYmO1BV18WYj-II";
 
 export const LoginAPI = async (user) => {
   try {

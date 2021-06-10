@@ -1,8 +1,9 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Login from "../Pages/Login";
-import Logout from "../Pages/Logout";
+import SignIn from "../Pages/SignIn";
+import SignUp from "../Pages/SignUp";
 import Main from "../Pages/Main";
+import ForgotPass from "../Pages/ForgotPass";
 
 function index() {
   function CustomRoute({ isPrivate, ...rest }) {
@@ -17,8 +18,9 @@ function index() {
     <>
       <Switch>
         <CustomRoute isPrivate exact path="/" component={Main} />
-        <CustomRoute exact path="/login" component={Login} />
-        <CustomRoute exact path="/logout" component={Logout} />
+        <CustomRoute exact path="/sign-in" component={SignIn} />
+        <CustomRoute exact path="/sign-up" component={SignUp} />
+        <CustomRoute exact path="/forgot-pass" component={ForgotPass} />
       </Switch>
     </>
   );
