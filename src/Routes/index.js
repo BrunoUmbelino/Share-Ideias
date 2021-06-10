@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import SignIn from "../Pages/SignIn";
 import SignUp from "../Pages/SignUp";
 import Main from "../Pages/Main";
 import ForgotPass from "../Pages/ForgotPass";
+import { Context } from "../Context/AuthContext";
 
 function index() {
   function CustomRoute({ isPrivate, ...rest }) {
-    const auth = true;
-    if (isPrivate && !auth) {
-      return <Redirect to="/login" />;
+    const { authenticated, loading } = useContext(Context);
+    console.log("auth", authenticated);
+
+    if (loading) {
+      return <h1>Loading</h1>;
     }
+
+    if (isPrivate && !authenticated) {
+      return <Redirect to="/sign-in" />;
+    }
+
     return <Route {...rest} />;
   }
 

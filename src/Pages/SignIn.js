@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../Context/AuthContext";
+
 import Container from "../Components/Container";
 import {
   FormButton,
@@ -8,24 +10,27 @@ import {
   FormikWrap,
   FormWrap,
   RedirectWrap,
+  Error,
 } from "../Components/Form/FormElements";
 import Title from "../Components/Title";
 
 function SignIn() {
+  const { handleLogin, loginError } = useContext(Context);
   return (
     <>
       <Container>
         <FormWrap>
           <FormikWrap
             initialValues={{ username: "", password: "" }}
-            onSubmit={async (values) => {
-              await console.log(values);
+            onSubmit={(values) => {
+              handleLogin(values);
             }}
           >
             <FormikForm>
               <RowForm>
                 <Title message="Sign in" />
               </RowForm>
+              <Error>{loginError}</Error>
               <RowForm>
                 <FormikField
                   name="username"

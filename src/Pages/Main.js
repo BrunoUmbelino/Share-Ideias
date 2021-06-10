@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Container from "../Components/Container";
 import NewPost from "../Components/NewPost";
 import Posts from "../Components/PostList";
@@ -14,6 +14,8 @@ import {
 } from "../Services/api";
 import styled from "styled-components";
 
+import { Context } from "../Context/AuthContext";
+
 function Main() {
   ///LoginAPI();
   //RegisterAPI();
@@ -22,11 +24,10 @@ function Main() {
   ///Feed();
   ///Reaction();
   const [posts, setPosts] = useState(null);
-
+  const { handleLogout } = useContext(Context);
   useEffect(() => {
     async function handlePosts() {
       const response = await Feeds();
-      console.log(response);
     }
     handlePosts();
   }, []);
@@ -35,7 +36,7 @@ function Main() {
     <>
       <Container>
         <LogOutWrap>
-          <IoLogOutOutline />
+          <IoLogOutOutline onClick={handleLogout} />
         </LogOutWrap>
         <Title message="What's on your mind?" />
         <NewPost />

@@ -38,3 +38,8 @@ export const RedirectWrap = styled.div`
     color: white;
   }
 `;
+
+export const Error = styled.div`
+  color: red;
+  padding: 10px;
+`;

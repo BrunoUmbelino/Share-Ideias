@@ -1,22 +1,18 @@
 import axios from "axios";
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
 });
 
 api.defaults.headers.common["Authorization"] =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODQsInVzZXJuYW1lIjoiYnJ1bm8tdW1iZWxpbm8iLCJpYXQiOjE2MjMyNzEzNDcsImV4cCI6MTYyMzI3NDk0N30.9f7UKcc-EEO6HO1szjosHuH3guC8vYmO1BV18WYj-II";
 
-export const LoginAPI = async (user) => {
-  try {
-    const response = await api.post("/sign-in", {
-      username: "bruno-umbelino",
-      password: "123456789",
-    });
-    console.log(response);
-  } catch (error) {
-    console.log(error);
-  }
+export const LoginAPI = async (username, password) => {
+  const response = await api.post("/sign-in", {
+    username: username,
+    password: password,
+  });
+  return response.data;
 };
 
 export const RegisterAPI = async (user) => {
