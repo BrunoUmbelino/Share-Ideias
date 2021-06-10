@@ -1,21 +1,36 @@
-import React from "react";
-import { Input, NewPostWrap, SubmitBtn, UserPhoto } from "./NewPostElements";
+import React, { useState } from "react";
+import { NewPostBlock, Input, SubmitBtn, UserPhoto } from "./NewPostElements";
 import { IoPersonCircleOutline } from "react-icons/io5";
+import { Feed } from "../../Services/api";
 
-function Form() {
+function Form({ handlePosts }) {
+  const [newPost, setNewPost] = useState("");
+  console.log(newPost);
+
+  async function handleSubmit() {
+    try {
+      const response = await Feed(newPost);
+      if (response) handlePosts();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <>
-      <NewPostWrap>
+      <NewPostBlock>
         <UserPhoto>
           <IoPersonCircleOutline />
         </UserPhoto>
         <Input
           name="text"
           type="text"
-          placeholder="What are you thinking about today? "
+          placeholder="What are you thinking about today?"
+          onChange={(e) => setNewPost(e.target.value)}
+          value={newPost}
         />
-        <SubmitBtn>Submit you text</SubmitBtn>
-      </NewPostWrap>
+        <SubmitBtn onClick={handleSubmit}>Submit you text</SubmitBtn>
+      </NewPostBlock>
     </>
   );
 }

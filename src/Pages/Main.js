@@ -20,15 +20,22 @@ function Main() {
   ///LoginAPI();
   //RegisterAPI();
   ///ForgotPasswordAPI("bruno-umbelino");
-  ///Feeds();
   ///Feed();
   ///Reaction();
-  const [posts, setPosts] = useState(null);
+  const [allPosts, setAllPosts] = useState([]);
   const { handleLogout } = useContext(Context);
-  useEffect(() => {
-    async function handlePosts() {
-      const response = await Feeds();
+
+  async function handlePosts() {
+    try {
+      const posts = await Feeds();
+      setAllPosts([...posts.data]);
+      console.log(allPosts);
+    } catch (error) {
+      console.log(error);
     }
+  }
+
+  useEffect(() => {
     handlePosts();
   }, []);
 
@@ -39,8 +46,8 @@ function Main() {
           <IoLogOutOutline onClick={handleLogout} />
         </LogOutWrap>
         <Title message="What's on your mind?" />
-        <NewPost />
-        <Posts />
+        <NewPost handlePosts={handlePosts} />
+        <Posts allPosts={allPosts} handlePosts={handlePosts} />
       </Container>
     </>
   );

@@ -1,14 +1,14 @@
 import React from "react";
-import { posts } from "../../data";
 import { PostsWrap } from "./PostListElements";
 import TextItem from "../PostItem";
 
-function index() {
+function index({ allPosts, handlePosts }) {
+  console.table(allPosts[0]);
   return (
     <PostsWrap>
       <ul>
-        {posts.map((post) => (
-          <TextItem key={post.id} post={post} />
+        {allPosts.map((post) => (
+          <TextItem key={post.id} post={post} handlePosts={handlePosts} />
         ))}
       </ul>
     </PostsWrap>

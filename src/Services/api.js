@@ -4,9 +4,6 @@ export const api = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
 });
 
-api.defaults.headers.common["Authorization"] =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODQsInVzZXJuYW1lIjoiYnJ1bm8tdW1iZWxpbm8iLCJpYXQiOjE2MjMyNzEzNDcsImV4cCI6MTYyMzI3NDk0N30.9f7UKcc-EEO6HO1szjosHuH3guC8vYmO1BV18WYj-II";
-
 export const LoginAPI = async (username, password) => {
   const response = await api.post("/sign-in", {
     username: username,
@@ -37,33 +34,27 @@ export const ForgotPasswordAPI = async (username) => {
 };
 
 export const Feeds = async () => {
-  try {
-    const response = await api.get("/feeds");
-    console.log(response);
-  } catch (error) {
-    console.log(error);
-  }
+  const response = await api.get("/feeds");
+  return response;
 };
 
-export const Feed = async (postContent) => {
+export const Feed = async (newPost) => {
   try {
     const response = await api.post("/feed", {
-      content: "Boa tarde",
+      content: newPost,
     });
+    return response;
   } catch (error) {
     console.log(error);
   }
 };
 
-export const Reaction = async () => {
-  try {
-    const response = await api.post("/reaction", {
-      feedId: 137,
-      like: true,
-      love: false,
-    });
-    console.log(response);
-  } catch (error) {
-    console.log(error);
-  }
+export const Reaction = async ({ feedId, like, love }) => {
+  console.log(feedId, like, love);
+  const response = await api.post("/reaction", {
+    feedId,
+    like,
+    love,
+  });
+  return response;
 };

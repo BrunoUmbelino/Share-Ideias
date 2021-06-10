@@ -39,6 +39,12 @@ export const Reactions = styled.div`
   padding: 1rem;
 `;
 
-export const LikeWrap = styled.div``;
+export const ReactionWrap = styled.div`
+  color: #ffffff58;
 
-export const LoveWrap = styled.div``;
+  svg {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+`;
