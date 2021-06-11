@@ -1,4 +1,4 @@
-link: https://share-thoughts-bruno-umbelino.netlify.app/sign-in
+Link: https://share-thoughts-bruno-umbelino.netlify.app/sign-in
 
 ### How to use
 
