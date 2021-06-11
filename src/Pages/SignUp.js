@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../Components/Button";
 import Container from "../Components/Container";
 import {
   FormikField,
@@ -6,9 +7,7 @@ import {
   FormikWrap,
   FormWrap,
   RedirectWrap,
-  FormGroup,
   RowForm,
-  FormButton,
 } from "../Components/Form/FormElements";
 import Title from "../Components/Title";
 import history from "../Routes/history";
@@ -36,7 +35,7 @@ function SignUp() {
           >
             <FormikForm>
               <RowForm>
-                <Title message="Sign up" />
+                <Title message="Sign up" alignEnd />
               </RowForm>
               <RowForm>
                 <FormikField
@@ -53,7 +52,7 @@ function SignUp() {
                 />
               </RowForm>
               <RowForm>
-                <FormButton type="submit">Register</FormButton>
+                <Button type="submit">Register</Button>
               </RowForm>
             </FormikForm>
           </FormikWrap>

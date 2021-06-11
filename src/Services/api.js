@@ -27,7 +27,7 @@ export const ForgotPasswordAPI = async ({ username }) => {
 
 export const FeedsAPI = async () => {
   const response = await api.get("/feeds");
-  return response;
+  return response.data;
 };
 
 export const FeedAPI = async (newPost) => {

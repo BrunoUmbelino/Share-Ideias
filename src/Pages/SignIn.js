@@ -3,7 +3,6 @@ import { Context } from "../Context/AuthContext";
 
 import Container from "../Components/Container";
 import {
-  FormButton,
   RowForm,
   FormikField,
   FormikForm,
@@ -13,6 +12,7 @@ import {
   Error,
 } from "../Components/Form/FormElements";
 import Title from "../Components/Title";
+import { Button } from "../Components/Button";
 
 function SignIn() {
   const { handleLogin, loginError } = useContext(Context);
@@ -46,14 +46,18 @@ function SignIn() {
                 />
               </RowForm>
               <RowForm>
-                <FormButton type="submit">Submit</FormButton>
+                <Button type="submit">Submit</Button>
               </RowForm>
             </FormikForm>
           </FormikWrap>
           <RowForm>
             <RedirectWrap>
-              <a href="/sign-up">Sign up</a>
-              <a href="/forgot-pass">Forgot password?</a>
+              <div>
+                <a href="/sign-up">Sign up</a>
+              </div>
+              <div>
+                <a href="/forgot-pass">Forgot password?</a>
+              </div>
             </RedirectWrap>
           </RowForm>
         </FormWrap>

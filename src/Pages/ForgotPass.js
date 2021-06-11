@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../Components/Button";
 import Container from "../Components/Container";
 import {
   FormikField,
@@ -7,7 +8,6 @@ import {
   FormWrap,
   RedirectWrap,
   RowForm,
-  FormButton,
 } from "../Components/Form/FormElements";
 import Title from "../Components/Title";
 import { ForgotPasswordAPI } from "../Services/api";
@@ -23,13 +23,13 @@ function ForgotPass() {
               try {
                 const response = await ForgotPasswordAPI(values);
                 if (response.data) {
-                  alert(JSON.stringify(response.data, 0, null));
+                  alert(JSON.stringify(response.data, null, 2));
                 } else {
                   throw new Error("User not found");
                 }
               } catch (error) {
                 console.log(error);
-                alert(JSON.stringify(error.message, 1, null));
+                alert(JSON.stringify(error.message, null, null));
               }
             }}
           >
@@ -38,10 +38,14 @@ function ForgotPass() {
                 <Title message="Forgot Password" />
               </RowForm>
               <RowForm>
-                <FormikField name="username" type="text" />
+                <FormikField
+                  name="username"
+                  type="text"
+                  placeholder={"Enter your username"}
+                />
               </RowForm>
               <RowForm>
-                <FormButton type="submit">Submit</FormButton>
+                <Button type="submit">Submit</Button>
               </RowForm>
             </FormikForm>
           </FormikWrap>

@@ -39,16 +39,20 @@ function PostItem({ post, handlePosts }) {
       <UserPhoto>
         <IoPersonCircleOutline />
       </UserPhoto>
-      <UserName>{post.author.username}</UserName>
-      <Content>{post.content}</Content>
+      <UserName data-testid="author">{post.author.username}</UserName>
+      <Content data-testid="content">{post.content}</Content>
       <Reactions>
         <ReactionWrap>
-          <IoThumbsUpSharp onClick={() => handleReaction("like")} />
-          <span> {post.likes}</span>
+          <div className={post.likes && "like"}>
+            <IoThumbsUpSharp onClick={() => handleReaction("like")} />
+            <span data-testid="likes">{post.likes}</span>
+          </div>
         </ReactionWrap>
         <ReactionWrap>
-          <IoHeartSharp onClick={() => handleReaction("love")} />
-          <span> {post.loves}</span>
+          <div className={post.loves && "love"}>
+            <IoHeartSharp onClick={() => handleReaction("love")} />
+            <span data-testid="loves">{post.loves}</span>
+          </div>
         </ReactionWrap>
       </Reactions>
     </ListItem>

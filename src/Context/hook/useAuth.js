@@ -25,7 +25,6 @@ export default function useAuth() {
 
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       localStorage.setItem("token", `${token}`);
-
       setAuthenticated(true);
       history.push("/");
     } catch (error) {
@@ -38,7 +37,6 @@ export default function useAuth() {
   }
 
   function handleLogout() {
-    console.log("handleLogut");
     localStorage.removeItem("token");
     setAuthenticated(false);
     history.push("/sign-in");

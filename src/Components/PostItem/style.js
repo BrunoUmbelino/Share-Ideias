@@ -11,25 +11,32 @@ export const ListItem = styled.li`
   grid-template-columns: 1fr 6fr;
   grid-template-rows: auto;
   border-bottom: 1px solid black;
+  color: var(--white);
 `;
 
 export const UserPhoto = styled.div`
   svg {
-    font-size: 3rem;
+    font-size: 4rem;
   }
   grid-area: photo;
   padding: 1rem;
+
+  @media screen and (max-width: 500px) {
+    svg {
+      font-size: 2rem;
+    }
+  }
 `;
 
 export const UserName = styled.div`
   grid-area: name;
-  padding: 1rem;
+  padding: 1.5rem 1rem 0.5rem 1rem; ;
 `;
 
 export const Content = styled.div`
-  min-height: 80px;
+  color: #ffffffd8;
   grid-area: content;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 `;
 
 export const Reactions = styled.div`
@@ -40,9 +47,17 @@ export const Reactions = styled.div`
 `;
 
 export const ReactionWrap = styled.div`
-  color: #ffffff58;
+  color: var(--gray);
+  .like {
+    color: var(--green);
+  }
+
+  .love {
+    color: #e0245e;
+  }
 
   svg {
+    margin: 0 10px;
     &:hover {
       cursor: pointer;
     }

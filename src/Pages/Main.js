@@ -3,7 +3,7 @@ import Container from "../Components/Container";
 import NewPost from "../Components/NewPost";
 import Posts from "../Components/PostList";
 import Title from "../Components/Title";
-import { IoLogOutOutline } from "react-icons/io5";
+import { IoLogOut } from "react-icons/io5";
 import { FeedsAPI } from "../Services/api";
 import styled from "styled-components";
 
@@ -16,7 +16,7 @@ function Main() {
   async function handlePosts() {
     try {
       const posts = await FeedsAPI();
-      setAllPosts([...posts.data]);
+      setAllPosts([...posts]);
       console.log(allPosts);
     } catch (error) {
       console.log(error);
@@ -24,16 +24,26 @@ function Main() {
   }
 
   useEffect(() => {
+    async function handlePosts() {
+      try {
+        const posts = await FeedsAPI();
+        setAllPosts([...posts]);
+        console.log(allPosts);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
     handlePosts();
-  }, []);
+  }, [allPosts]);
 
   return (
     <>
       <Container>
         <LogOutWrap>
-          <IoLogOutOutline onClick={handleLogout} />
+          <IoLogOut onClick={handleLogout} color={`var(--white)`} />
         </LogOutWrap>
-        <Title message="What's on your mind?" />
+        <Title message="Share Your Mind" shadow />
         <NewPost handlePosts={handlePosts} />
         <Posts allPosts={allPosts} handlePosts={handlePosts} />
       </Container>

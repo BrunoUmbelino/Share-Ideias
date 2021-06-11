@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { NewPostBlock, Input, SubmitBtn, UserPhoto } from "./NewPostElements";
 import { IoPersonCircleOutline } from "react-icons/io5";
-import { FeedsAPI } from "../../Services/api";
+import { FeedAPI } from "../../Services/api";
 
 function Form({ handlePosts }) {
   const [newPost, setNewPost] = useState("");
-  console.log(newPost);
 
   async function handleSubmit() {
     try {
-      const response = await FeedsAPI(newPost);
+      const response = await FeedAPI(newPost);
       if (response) handlePosts();
     } catch (error) {
       console.log(error);
@@ -25,11 +24,14 @@ function Form({ handlePosts }) {
         <Input
           name="text"
           type="text"
-          placeholder="What are you thinking about today?"
+          placeholder="What are you thinking about right now?"
           onChange={(e) => setNewPost(e.target.value)}
           value={newPost}
+          data-testid="input"
         />
-        <SubmitBtn onClick={handleSubmit}>Submit you text</SubmitBtn>
+        <SubmitBtn type="button" onClick={handleSubmit}>
+          Share with the world!
+        </SubmitBtn>
       </NewPostBlock>
     </>
   );

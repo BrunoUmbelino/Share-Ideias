@@ -3,10 +3,10 @@ import { Formik, Form, Field } from "formik";
 
 export const FormWrap = styled.div`
   padding: 2rem;
-  ///border: 1px solid white;
   display: flex;
   flex-direction: column;
   width: 400px;
+  border-radius: 15px;
 `;
 
 export const FormikWrap = styled(Formik)``;
@@ -21,25 +21,35 @@ export const RowForm = styled.div`
 export const FormikField = styled(Field)`
   width: 100%;
   height: 100%;
-  border-radius: 8px;
-`;
+  border-radius: 4px;
+  border: var(--green) solid 2px;
+  background: var(--gray);
+  color: var(--white);
+  padding: 10px;
+  font-size: 1.4rem;
 
-export const FormButton = styled.button`
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
+  &:focus {
+    outline: var(--green) solid 2px;
+  }
 `;
 
 export const RedirectWrap = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 
   a {
-    color: white;
+    color: #7ea8f7;
+    font-size: 1.1rem;
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: 1px solid #7ea8f7;
+    }
   }
 `;
 
 export const Error = styled.div`
-  color: red;
-  padding: 10px;
+  color: #ff5d5d;
+  font-size: 1rem;
 `;
