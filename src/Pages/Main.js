@@ -43,7 +43,7 @@ function Main() {
         <LogOutWrap>
           <IoLogOut onClick={handleLogout} color={`var(--white)`} />
         </LogOutWrap>
-        <Title message="Share Your Mind" shadow />
+        <Title message="Share Thoughts" shadow />
         <NewPost handlePosts={handlePosts} />
         <Posts allPosts={allPosts} handlePosts={handlePosts} />
       </Container>
