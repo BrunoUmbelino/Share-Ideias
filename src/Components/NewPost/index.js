@@ -12,6 +12,8 @@ function Form({ handlePosts }) {
       if (response) handlePosts();
     } catch (error) {
       console.log(error);
+    } finally {
+      setNewPost("");
     }
   }
 

@@ -12,6 +12,7 @@ export const ListItem = styled.li`
   grid-template-rows: auto;
   border-bottom: 1px solid black;
   color: var(--white);
+  padding-top: 1rem;
 `;
 
 export const UserPhoto = styled.div`
@@ -47,7 +48,8 @@ export const Reactions = styled.div`
 `;
 
 export const ReactionWrap = styled.div`
-  color: var(--gray);
+  color: var(--white);
+
   .like {
     color: var(--green);
   }

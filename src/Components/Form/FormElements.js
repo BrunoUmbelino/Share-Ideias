@@ -39,12 +39,12 @@ export const RedirectWrap = styled.div`
   justify-content: space-around;
 
   a {
-    color: #7ea8f7;
-    font-size: 1.1rem;
+    color: var(--black);
+    font-size: 1.2rem;
     text-decoration: none;
 
     &:hover {
-      border-bottom: 1px solid #7ea8f7;
+      border-bottom: 1px solid var(--black);
     }
   }
 `;

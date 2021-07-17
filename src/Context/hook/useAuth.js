@@ -9,6 +9,7 @@ export default function useAuth() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    
     if (token) {
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       setAuthenticated(true);

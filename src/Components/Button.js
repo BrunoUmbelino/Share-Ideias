@@ -8,9 +8,10 @@ export const Button = styled.button`
   background: var(--green);
   font-size: 1.4rem;
   border: none;
+  transition: all 0.2s ease;
 
   &:hover {
     cursor: pointer;
-    background: var(--greenDark);
+    filter: brightness(90%);
   }
 `;

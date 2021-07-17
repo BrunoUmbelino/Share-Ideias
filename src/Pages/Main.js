@@ -33,15 +33,14 @@ function Main() {
         console.log(error);
       }
     }
-
     handlePosts();
-  }, [allPosts]);
+  }, []);
 
   return (
     <>
       <Container>
         <LogOutWrap>
-          <IoLogOut onClick={handleLogout} color={`var(--white)`} />
+          <IoLogOut onClick={handleLogout} />
         </LogOutWrap>
         <Title message="Share Thoughts" shadow />
         <NewPost handlePosts={handlePosts} />
@@ -52,8 +51,8 @@ function Main() {
 }
 
 const LogOutWrap = styled.div`
-  color: white;
-  font-size: 2rem;
+  color: var(--black);
+  font-size: 2.2rem;
   width: 100%;
   text-align: end;
 

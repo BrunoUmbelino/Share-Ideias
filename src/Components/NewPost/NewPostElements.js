@@ -37,7 +37,7 @@ export const Input = styled.textarea`
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 10px;
-
+  outline: none;
   ::placeholder {
     font-size: 1.2rem;
     color: #5e5e5e;

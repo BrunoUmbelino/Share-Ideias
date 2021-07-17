@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledTitle = styled.div`
   h1 {
-    color: var(--white);
+    color: var(--black);
     margin-bottom: 20px;
     width: 100%;
     text-align: ${(props) => (props.alignEnd ? `end` : ``)};
