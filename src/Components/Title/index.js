@@ -4,6 +4,7 @@ import styled from "styled-components";
 const StyledTitle = styled.div`
   h1 {
     color: var(--black);
+    font-size: 2.4rem;
     margin-bottom: 20px;
     width: 100%;
     text-align: ${(props) => (props.alignEnd ? `end` : ``)};
