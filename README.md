@@ -1,5 +1,11 @@
 # Share-Thoughts
 
+![Login screen](https://github.com/BrunoUmbelino/Share-Thoughts/blob/main/github/login-page.PNG)
+
+---
+
+![Main screen](https://github.com/BrunoUmbelino/Share-Thoughts/blob/main/github/main-page.PNG)
+
 **Share Thoughts** is a social network where you and your friends can share what you're thinking at the moment and react to each other's posts. 
 
 ### Tecnologies
