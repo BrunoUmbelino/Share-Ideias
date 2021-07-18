@@ -15,6 +15,8 @@ link: https://share-thoughts-bruno-umbelino.herokuapp.com/
 * React (Functional Components, Hooks, Custom Hooks, Context API)
 * Axios
 * Styled Components
+* Formik
+* Testing-library/react and jest
 * JavaScript ES6
 * HTML5
 * CSS3
